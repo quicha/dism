@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        Personalice la directiva de seguridad de contenido en la etiqueta meta como sea necesario. Agregue "unsafe-inline" a default-src para permitir JavaScript insertado.
+        Para obtener más detalles, consulte http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+        
+        <meta name="viewport" content="width=device-width initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href= "css/index.css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="scripts/preciosBebidas.js"></script>
+        <script type="text/javascript" src="scripts/mapa.js"></script>
+       <script type="text/javascript" src="scripts/ubi.js"></script> 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+       
+
+        <title>AppDISM</title>
+    </head>
+    <body>
+
+        <div data-role="page" id="main" data-theme="b">
+            <div data-role="header" data-theme="b">
+                <h1>e-vending</h1>
+            </div>
+            <div data-role="content">
+                <div data-role="controlgroup" data-type="horizontal" class="centrar">
+                    <p><a href="#preciosbebidas" data-role="button" data-icon="tag" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Ver precios productos</a></p> 
+                    <p><a href="#mapa" data-role="button" data-icon="location" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Ver mapa </a></p>
+                    <p><a href="#ubi" data-role="button" data-icon="location" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Listado máquinas vending </a></p>
+                    <p><a href="#credi" data-role="button" data-icon="user" data-iconpos="left" data-theme="b" data-mini="true" data-transition="slide">Créditos</a></p>
+                </div>
+
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h2>DISM 2017</h2>
+            </div>
+        </div>
+
+
+<!------------------------------------PÁGINA DE LA TABLA DE LOS PRECIOS DE LOS PRODUCTOS------------------------------------------------------------------------->
+            <div data-role="page" id="preciosbebidas" data-theme="b" >
+                <div data-role="header">
+                    <h1>Precios bebidas</h1>
+                </div>
+
+                <div data-role="content">
+                    <script type="text/javascript">
+
+                       /* $(document).ready(consultar ());*/
+
+                        consultar();
+
+                    </script>
+
+                       
+                        <table data-theme="b">
+                            <tbody id="contenido">
+                                </tbody> <!-- lo que se va a rellenar con la consulta que haga-->
+                        </table>   
+                </div>
+                <!-- llamo a la función que realiza la llamada api-->
+
+
+                <div data-role="footer" data-position="fixed">
+                    <a href="#main" id="ancla" data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide"></a>
+                    <h2>DISM 2017</h2>
+                </div>
+            </div>
+
+        <!------------------------------------PÁGINA DEL MAPA CON LOS ICONITOS DE DONDE ESTÁN LAS MÁQUINAS------------------------------------------------------------------------->
+
+
+            <div data-role="page" id="mapa" data-url="map-page" data-theme="b">
+                <div data-role="header">
+                    <h1>Mapa UA</h1>
+                </div>
+                <div data-role="content" class="ui-content" id="map-canvas">      
+              <!-- le añado localización con mi api-key-->
+                            
+                    <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKzCaTqAapYB0SZ-dc0zriJyJRNdsTM4s&callback=initMap">
+                    </script>
+
+
+
+                    <script>
+
+                        compararDatos();
+
+                    </script>
+
+                    
+                </div>
+
+                <div data-role="footer" data-position="fixed">
+                    <a href="#main" id="ancla" data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide"></a>
+                    <h2>DISM 2017</h2>
+                </div>
+            </div>
+        <!--------------PÁGINA CON TABLAS CON LAS COORDENADAS Y EL ENLACE A UN MAPA -->
+            <div data-role="page" id="ubi" data-theme="b" >
+                <div data-role="header">
+                    <h1>Ubicación</h1>
+                </div>
+                <div data-role="content">
+                    <script type="text/javascript">
+
+                                            crearTabla();
+                    </script>
+
+                    <table>
+
+                        <tbody id="mapTable">
+
+
+                        </tbody>
+                       
+                            
+                            
+                             <!-- lo que se va a rellenar con la consulta que haga-->
+                    </table>   
+                </div>
+
+                <div data-role="footer" data-position="fixed">
+                    <a href="#main" id="ancla" data-role="button" data-icon="home" data-iconpos="notext" data-transition="slidedown"></a>
+                    <h2>DISM 2017</h2>
+                </div>
+            </div>
+
+
+        <!-----------------------------------PÁGINA CON LOS CRÉDITOS DEL CREADOR----------------------------------------------->
+
+
+
+
+        <div data-role="page" id="credi" data-theme="b">
+            <div data-role="header">
+                <h1>Créditos</h1>
+            </div>
+            <div data-role="content" class="creditos" >
+
+                
+              
+                <p><img src="../www/images/17635266_1341152615979165_6293132814716504129_o.jpg" id="guapa" /></p>
+
+
+                <p><strong> Blanca Vázquez Paredes</strong></p>
+                <p> <strong>DNI: 71955507F</strong></p>
+                <p> <strong> bvp16@alu.ua.es</strong></p>
+                
+
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <a href="#main" id="ancla" data-role="button" data-icon="home" data-iconpos="notext" data-transition="slide"></a>
+                <h2>DISM 2017</h2>
+            </div>
+        </div>
+
+<!--------------------------------------MAPA ESPECÍFICO DE UNA MÁQUINA DE VENDING-->
+
+        <div data-role="page" id="mapaEspecifico" data-url="map-page" data-theme="b">
+            <div data-role="header">
+                <h1>MAPA</h1>
+            </div>
+            <div data-role="content" class="ui-content" id="map-especific" >
+
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <a href="#main" id="ancla" data-role="button"  data-icon="home" data-iconpos="notext" data-transition="slide"></a>
+                <h2>DISM 2017</h2>
+            </div>
+        </div>
+
+
+       
+
+
+              
+</body>
+</html>
+
+
+
+<!--Referencia de Cordova que se agrega a la aplicación cuando se compila-->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="scripts/platformOverrides.js"></script>
+

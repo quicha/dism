@@ -1,0 +1,93 @@
+﻿
+#mapa, #map-canvas, #map-especific, #mapaEspecifico {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#main {
+    height: 100%;
+    background-size: 200px 200px;
+    background-image: url(../images/images.png);
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#codigo {
+    text-align: center;
+    color: #26dae0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#bodyContent, #firstHeading {
+    color: black;
+    font-weight: bold;
+}
+
+table a{
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    
+}
+
+table, th{
+    border: 1px solid white;
+}
+
+
+
+table tr{
+
+    background-color: white;
+    color: black;
+
+}
+
+.centrar{
+
+    text-align: center;
+   
+
+
+}
+
+.centrar a{
+
+    float:none;
+    border-radius: 50%;
+    
+
+}
+
+#ancla{
+
+    padding-left: 50px;
+}
+h2.ui-title{
+    float: right;
+    width: auto;
+}
+
+
+
+#guapa{
+
+    height: 150px;
+    width: 200px;
+
+
+}
+
+.creditos{
+
+    text-align: center;
+
+}
